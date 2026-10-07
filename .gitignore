@@ -4,3 +4,8 @@ node_modules/
 .env.local
 .next/
 dist/
+
+# Material crudo original del cliente — ya organizado en docs/ y assets/
+Manual de marca recursos_Carpeta.zip
+Manual de marca recursos_Carpeta/
+Textos_Finales_Landing_AMA_Soluciones.docx

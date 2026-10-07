@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AMA Soluciones — Protegemos lo que amas</title>
+<meta name="description" content="Agencia multimarca de seguros y créditos de vehículo en Medellín. Comparamos entre las mejores aseguradoras del país para encontrar lo que de verdad necesitas, con un solo asesor de confianza.">
+<meta property="og:title" content="AMA Soluciones — Protegemos lo que amas">
+<meta property="og:description" content="Seguros y créditos, sin enredos y con el respaldo que mereces.">
+<meta property="og:image" content="assets/logos/logo-completo-color.png">
+<link rel="icon" href="assets/logos/isotipo-corazon-color.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Símbolos SVG compartidos (corazón de líneas, WhatsApp, chevron) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ico-heart" viewBox="0 0 100 90">
+    <path d="M50 85 C20 60 2 40 2 22 C2 8 14 -2 28 2 C38 5 46 14 50 22 C54 14 62 5 72 2 C86 -2 98 8 98 22 C98 40 80 60 50 85 Z" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="ico-whatsapp" viewBox="0 0 32 32">
+    <path fill="currentColor" d="M16.001 3C9.37 3 4 8.37 4 15c0 2.39.7 4.61 1.9 6.49L4 29l7.73-1.86A11.9 11.9 0 0 0 16 27c6.63 0 12-5.37 12-12S22.63 3 16.001 3Zm.01 21.8c-1.96 0-3.86-.52-5.5-1.5l-.39-.23-4.58 1.1 1.12-4.47-.26-.41A9.77 9.77 0 0 1 6.2 15c0-5.4 4.4-9.8 9.81-9.8 5.4 0 9.8 4.4 9.8 9.8s-4.4 9.8-9.81 9.8Zm5.4-7.34c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+  </symbol>
+  <symbol id="ico-chevron" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
+  </symbol>
+  <symbol id="ico-menu" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/>
+  </symbol>
+  <symbol id="ico-close" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M5 5l14 14M19 5L5 19"/>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#inicio" class="brand-logo" aria-label="AMA Soluciones — inicio">
+      <img src="assets/logos/logo-completo-color.png" alt="AMA Soluciones">
+    </a>
+    <nav class="main-nav" aria-label="Secciones">
+      <ul>
+        <li><a href="#por-que">Por qué elegirnos</a></li>
+        <li><a href="#portafolio">Portafolio</a></li>
+        <li><a href="#credito">Crédito</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#preguntas">Preguntas</a></li>
+      </ul>
+    </nav>
+    <a class="header-cta" href="https://wa.me/573103716688?text=%C2%A1Hola%2C%20familia%20AMA%21%20Vengo%20de%20su%20sitio%20web%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20para%20proteger%20lo%20que%20amo." target="_blank" rel="noopener">
+      <svg><use href="#ico-whatsapp"/></svg>
+      Hablemos
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+      <svg id="navToggleIcon"><use href="#ico-menu"/></svg>
+    </button>
+  </div>
+  <div class="container">
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Secciones (móvil)">
+      <a href="#por-que">Por qué elegirnos</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#credito">Crédito de vehículo</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="heart-mark" aria-hidden="true"><svg><use href="#ico-heart"/></svg></div>
+    <div class="container">
+      <div class="hero-inner">
+        <span class="hero-kicker">Seguros y créditos de vehículo · Medellín</span>
+        <h1>Protegemos lo que amas.</h1>
+        <p class="hero-sub">Cuida a tu familia, tu patrimonio y tus proyectos con una agencia que trabaja con varias aseguradoras para encontrar lo que de verdad necesitas. Seguros y créditos, sin enredos y con el respaldo que mereces.</p>
+        <a class="btn btn-primary" href="https://wa.me/573103716688?text=%C2%A1Hola%2C%20familia%20AMA%21%20Vengo%20de%20su%20sitio%20web%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20para%20proteger%20lo%20que%20amo." target="_blank" rel="noopener">
+          <svg><use href="#ico-whatsapp"/></svg>
+          Hablemos por WhatsApp
+        </a>
+        <div class="hero-trust"><span class="dot"></span> Asesoría sin costo · Respuesta el mismo día</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ ELEGIRNOS -->
+  <section id="por-que" class="why">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-kicker">Por qué elegirnos</span>
+        <h2>¿Por qué tener tus seguros con AMA Soluciones?</h2>
+        <p>Y lo mejor: nuestra asesoría no tiene costo para ti.</p>
+      </div>
+      <div class="why-list">
+        <div class="why-item">
+          <svg class="mini-heart"><use href="#ico-heart"/></svg>
+          <div>
+            <h3>Varias aseguradoras, una sola conversación</h3>
+            <p>No te casas con una sola opción. Comparamos entre las mejores compañías del país para recomendarte lo que de verdad necesitas.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <svg class="mini-heart"><use href="#ico-heart"/></svg>
+          <div>
+            <h3>Sin enredos</h3>
+            <p>Olvídate de los trámites eternos, te apoyamos gestionando directamente con la aseguradora.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <svg class="mini-heart"><use href="#ico-heart"/></svg>
+          <div>
+            <h3>Un solo asesor, trato cercano</h3>
+            <p>En lugar de hablar con un call center distinto para cada póliza, en AMA tienes un aliado de confianza que conoce tu caso y cuida tus intereses.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <svg class="mini-heart"><use href="#ico-heart"/></svg>
+          <div>
+            <h3>Contigo cuando más lo necesitas</h3>
+            <p>Si tienes un accidente o un siniestro, no estás solo. Te acompañamos en todo el proceso de reclamación hasta que se resuelva.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTAFOLIO -->
+  <section id="portafolio" class="portfolio">
+    <div class="section-head">
+      <span class="section-kicker">Portafolio de soluciones</span>
+      <h2>Todo lo que necesitas para avanzar, en un solo lugar.</h2>
+    </div>
+
+    <article class="cat cat--light">
+      <div class="heart-mark" aria-hidden="true" style="width:340px;top:-20%;right:4%;"><svg><use href="#ico-heart"/></svg></div>
+      <div class="cat-inner">
+        <div class="cat-label">
+          <svg class="mini-heart"><use href="#ico-heart"/></svg>
+          <h3>Tu familia</h3>
+        </div>
+        <div class="cat-products">
+          <div class="cat-product">
+            <div>
+              <h4>Seguro de Vida</h4>
+              <p>El acto de amor más grande. Aseguramos el futuro de los que le dan sentido a tu vida.</p>
+            </div>
+            <a class="wa-pill" href="https://wa.me/573103716688?text=Hola%2C%20AMA.%20Vengo%20de%20su%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20vida." target="_blank" rel="noopener"><svg><use href="#ico-whatsapp"/></svg>Preguntar</a>
+          </div>
+          <div class="cat-product">
+            <div>
+              <h4>Seguro de Salud</h4>
+              <p>Tu bienestar no es un gasto, es tu mejor inversión. Planes a tu medida para que siempre estés en buenas manos.</p>
+            </div>
+            <a class="wa-pill" href="https://wa.me/573103716688?text=Hola%2C%20AMA.%20Vengo%20de%20su%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20salud." target="_blank" rel="noopener"><svg><use href="#ico-whatsapp"/></svg>Preguntar</a>
+          </div>
+          <div class="cat-product">
+            <div>
+              <h4>Seguro de Mascotas</h4>
+              <p>Porque ellos también son de la casa. Coberturas para cuidar la salud, el bienestar y las travesuras de tus peluditos.</p>
+            </div>
+            <a class="wa-pill" href="https://wa.me/573103716688?text=Hola%2C%20AMA.%20Vengo%20de%20su%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20mascotas." target="_blank" rel="noopener"><svg><use href="#ico-whatsapp"/></svg>Preguntar</a>
+          </div>
+          <div class="cat-product">
+            <div>
+              <h4>Seguro de Viajes</h4>
+              <p>Explora el mundo sin preocupaciones. Asistencia y cobertura médica para que tu única tarea sea disfrutar.</p>
+            </div>
+            <a class="wa-pill" href="https://wa.me/573103716688?text=Hola%2C%20AMA.%20Vengo%20de%20su%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20viajes." target="_blank" rel="noopener"><svg><use href="#ico-whatsapp"/></svg>Preguntar</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="cat cat--mid">
+      <div class="heart-mark" aria-hidden="true" style="width:300px;bottom:-24%;left:2%;"><svg><use href="#ico-heart"/></svg></div>
+      <div class="cat-inner">
+        <div class="cat-label">
+          <svg class="mini-heart"><use href="#ico-heart"/></svg>
+          <h3>Tu hogar y tu patrimonio</h3>
+        </div>
+        <div class="cat-products">
+          <div class="cat-product">
+            <div>
+              <h4>Seguro de Hogar</h4>
+              <p>Tu refugio, siempre protegido. Cuidamos el lugar donde construyes tus mejores recuerdos ante cualquier imprevisto.</p>
+            </div>
+            <a class="wa-pill" href="https://wa.me/573103716688?text=Hola%2C%20AMA.%20Vengo%20de%20su%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20hogar." target="_blank" rel="noopener"><svg><use href="#ico-whatsapp"/></svg>Preguntar</a>
+          </div>
+          <div class="cat-product">
+            <div>
+              <h4>Seguro de Arrendamiento</h4>
+              <p>¿Arriendas tu inmueble? Te respaldamos si el arrendatario deja de pagar, para que tu inversión siga dando frutos.</p>
+            </div>
+            <a class="wa-pill" href="https://wa.me/573103716688?text=Hola%2C%20AMA.%20Vengo%20de%20su%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20arrendamiento." target="_blank" rel="noopener"><svg><use href="#ico-whatsapp"/></svg>Preguntar</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="cat cat--dark">
+      <div class="heart-mark" aria-hidden="true" style="width:320px;top:-18%;right:6%;"><svg><use href="#ico-heart"/></svg></div>
+      <div class="cat-inner">
+        <div class="cat-label">
+          <svg class="mini-heart"><use href="#ico-heart"/></svg>
+          <h3>Tu movilidad</h3>
+        </div>
+        <div class="cat-products">
+          <div class="cat-product">
+            <div>
+              <h4>Seguros de Movilidad</h4>
+              <p>Autos, camiones, motos, bicicletas y patinetas eléctricas. Rueda sin preocupaciones: protegemos tu vehículo y a tus acompañantes en cada kilómetro.</p>
+            </div>
+            <a class="wa-pill" href="https://wa.me/573103716688?text=Hola%2C%20AMA.%20Vengo%20de%20su%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20movilidad%20%28autos%2C%20motos%20u%20otros%20veh%C3%ADculos%29." target="_blank" rel="noopener"><svg><use href="#ico-whatsapp"/></svg>Preguntar</a>
+          </div>
+          <div class="cat-product">
+            <div>
+              <h4>SOAT</h4>
+              <p>Tu SOAT al día, sin filas y sin vueltas. Te lo gestionamos rápido.</p>
+            </div>
+            <a class="wa-pill" href="https://wa.me/573103716688?text=Hola%2C%20AMA.%20Vengo%20de%20su%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20sobre%20el%20SOAT." target="_blank" rel="noopener"><svg><use href="#ico-whatsapp"/></svg>Preguntar</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="cat cat--mid">
+      <div class="heart-mark" aria-hidden="true" style="width:300px;bottom:-22%;right:2%;"><svg><use href="#ico-heart"/></svg></div>
+      <div class="cat-inner">
+        <div class="cat-label">
+          <svg class="mini-heart"><use href="#ico-heart"/></svg>
+          <h3>Tu futuro</h3>
+        </div>
+        <div class="cat-products">
+          <div class="cat-product">
+            <div>
+              <h4>Renta Educativa</h4>
+              <p>Asegura hoy la educación de tus hijos, pase lo que pase.</p>
+            </div>
+            <a class="wa-pill" href="https://wa.me/573103716688?text=Hola%2C%20AMA.%20Vengo%20de%20su%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20sobre%20la%20renta%20educativa." target="_blank" rel="noopener"><svg><use href="#ico-whatsapp"/></svg>Preguntar</a>
+          </div>
+          <div class="cat-product">
+            <div>
+              <h4>Renta Pensión</h4>
+              <p>Planea desde ya el ingreso que quieres tener cuando te retires.</p>
+            </div>
+            <a class="wa-pill" href="https://wa.me/573103716688?text=Hola%2C%20AMA.%20Vengo%20de%20su%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20sobre%20la%20renta%20pensi%C3%B3n." target="_blank" rel="noopener"><svg><use href="#ico-whatsapp"/></svg>Preguntar</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="cat cat--light">
+      <div class="heart-mark" aria-hidden="true" style="width:320px;top:-22%;left:4%;"><svg><use href="#ico-heart"/></svg></div>
+      <div class="cat-inner">
+        <div class="cat-label">
+          <svg class="mini-heart"><use href="#ico-heart"/></svg>
+          <h3>Tu empresa y tu profesión</h3>
+        </div>
+        <div class="cat-products">
+          <div class="cat-product">
+            <div>
+              <h4>Seguros para Empresas</h4>
+              <p>Tu negocio es tu esfuerzo; no lo dejes al azar. Te asesoramos en coberturas para que operes con solidez.</p>
+            </div>
+            <a class="wa-pill" href="https://wa.me/573103716688?text=Hola%2C%20AMA.%20Vengo%20de%20su%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20sobre%20los%20seguros%20para%20empresas." target="_blank" rel="noopener"><svg><use href="#ico-whatsapp"/></svg>Preguntar</a>
+          </div>
+          <div class="cat-product">
+            <div>
+              <h4>Responsabilidad Civil Profesional</h4>
+              <p>Ejerce tu profesión con respaldo frente a reclamos por errores u omisiones en tu trabajo.</p>
+            </div>
+            <a class="wa-pill" href="https://wa.me/573103716688?text=Hola%2C%20AMA.%20Vengo%20de%20su%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20sobre%20la%20responsabilidad%20civil%20profesional." target="_blank" rel="noopener"><svg><use href="#ico-whatsapp"/></svg>Preguntar</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="portfolio-cta">
+      <a class="btn btn-primary" href="https://wa.me/573103716688?text=Hola%2C%20AMA.%20Me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20para%20proteger%20lo%20que%20amo." target="_blank" rel="noopener">
+        <svg><use href="#ico-whatsapp"/></svg>
+        Escríbenos para asesorarte
+      </a>
+    </div>
+  </section>
+
+  <!-- CRÉDITO DE VEHÍCULO -->
+  <section id="credito" class="credito">
+    <div class="heart-mark" aria-hidden="true"><svg><use href="#ico-heart"/></svg></div>
+    <div class="container">
+      <div class="credito-inner">
+        <span class="section-kicker">Crédito de vehículo</span>
+        <h2>¿Carro nuevo o usado? Está más cerca de lo que crees.</h2>
+        <p class="lead">Con una sola solicitud estudiamos tu crédito de vehículo con varias entidades financieras. Y si ya tienes un crédito, te ayudamos a trasladarlo a mejores condiciones (compra de cartera).</p>
+        <p class="fine-print">Crédito sujeto a estudio y aprobación de la entidad financiera.</p>
+        <a class="btn btn-primary" href="https://wa.me/573103716688?text=Hola%2C%20AMA.%20Me%20interesa%20un%20cr%C3%A9dito%20de%20veh%C3%ADculo." target="_blank" rel="noopener">
+          <svg><use href="#ico-whatsapp"/></svg>
+          Quiero mi crédito
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section id="nosotros" class="nosotros">
+    <div class="container nosotros-grid">
+      <div>
+        <span class="section-kicker" style="color:var(--teal-300)">Sobre nosotros</span>
+        <h2>Somos una familia que cuida familias.</h2>
+        <p class="closing">Estamos listos para escucharte, entender tu momento de vida y armar contigo el respaldo que necesitas.</p>
+      </div>
+      <div>
+        <p class="lead">AMA Soluciones nació del amor por los nuestros: el nombre lleva la esencia de nuestros hijos Aitana, Maximiliano y Antonella. Como agencia somos una marca nueva, pero nuestro equipo directivo respalda tu tranquilidad con más de 10 años de trayectoria en el sector asegurador. Conocemos de primera mano lo que significa proteger a los tuyos, brindándote la cercanía de una verdadera familia y la solidez de las mejores compañías del país.</p>
+        <div class="team">
+          <div class="team-card">
+            <div class="team-avatar">DC</div>
+            <div>
+              <div class="team-name">Diana Carolina</div>
+              <div class="team-role">Asesora en Seguros</div>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">A</div>
+            <div>
+              <div class="team-name">Andrés</div>
+              <div class="team-role">Asesor en Seguros</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALIADOS -->
+  <section id="aliados" class="aliados">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-kicker">Respaldo y aliados</span>
+        <h2>El respaldo de los grandes, con la cercanía de una familia.</h2>
+        <p>Trabajamos de la mano con compañías de seguros sólidas y reconocidas del país, para que tu confianza siempre esté respaldada.</p>
+      </div>
+      <div class="aliados-row">
+        <span class="aliado-chip">Sura</span>
+        <span class="aliado-chip">Allianz</span>
+        <span class="aliado-chip">Seguros Bolívar</span>
+        <span class="aliado-chip">Axa Colpatria</span>
+        <span class="aliado-chip">SBS</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES -->
+  <section id="preguntas" class="faq">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-kicker">Preguntas frecuentes</span>
+        <h2>Preguntas frecuentes</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>¿Cuánto cuesta la asesoría?<svg class="chevron"><use href="#ico-chevron"/></svg></summary>
+          <p class="faq-answer">Nada. Nuestra asesoría no tiene costo; solo pagas tu póliza.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Atienden en toda Colombia?<svg class="chevron"><use href="#ico-chevron"/></svg></summary>
+          <p class="faq-answer">Sí. Te atendemos de forma virtual desde cualquier ciudad del país.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Puedo pasar mis pólizas actuales con ustedes?<svg class="chevron"><use href="#ico-chevron"/></svg></summary>
+          <p class="faq-answer">Sí. Revisamos lo que tienes hoy, te decimos si hay algo que mejorar y si decides quedarte con nosotros, hacemos el trámite.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué pasa si tengo un siniestro?<svg class="chevron"><use href="#ico-chevron"/></svg></summary>
+          <p class="faq-answer">Comunícate a la línea de asistencia de la aseguradora, que tiene atención las 24 horas del día los 7 días de la semana, o también nos puedes llamar o escribir y te acompañamos en todo el proceso de reclamación con la aseguradora.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿También tienen créditos?<svg class="chevron"><use href="#ico-chevron"/></svg></summary>
+          <p class="faq-answer">Sí, para vehículo nuevo o usado, sujetos a aprobación de la entidad financiera.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section id="contacto" class="cierre">
+    <div class="heart-mark" aria-hidden="true"><svg><use href="#ico-heart"/></svg></div>
+    <div class="container">
+      <div class="cierre-inner">
+        <h2>Toma hoy el control de tu tranquilidad.</h2>
+        <p>Da el primer paso, sin compromiso y sin papeleo. Escríbenos por WhatsApp y Diana, Andrés o alguien de nuestro equipo te escuchará para encontrar la solución que realmente necesitas.</p>
+        <a class="btn btn-on-dark" href="https://wa.me/573103716688?text=%C2%A1Hola%2C%20familia%20AMA%21%20Vengo%20de%20su%20sitio%20web%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20para%20proteger%20lo%20que%20amo." target="_blank" rel="noopener">
+          <svg><use href="#ico-whatsapp"/></svg>
+          Iniciar chat en WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo"><img src="assets/logos/logo-completo-blanco.png" alt="AMA Soluciones"></div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Contacto</h5>
+          <a href="https://wa.me/573103716688" target="_blank" rel="noopener">WhatsApp 310 371 66 88</a>
+          <p>Medellín, Colombia</p>
+        </div>
+        <div class="footer-col">
+          <h5>Legales</h5>
+          <a href="#">Política de Tratamiento de Datos Personales</a>
+          <a href="#">Política de Privacidad</a>
+          <a href="#">Términos y Condiciones</a>
+          <p>NIT 902082368-8</p>
+        </div>
+        <div class="footer-col">
+          <h5>Redes</h5>
+          <a href="https://instagram.com/amasolucionesltda" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://facebook.com/amasolucionesltda" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>
+        <p class="footer-legal">AMA Soluciones actúa como intermediario de seguros. Las pólizas son expedidas por las compañías aseguradoras, y sus coberturas, exclusiones y condiciones están sujetas a lo establecido en cada contrato. Los créditos están sujetos a estudio y aprobación de la entidad financiera.</p>
+        <p>© 2026 AMA Soluciones. Todos los derechos reservados.</p>
+      </div>
+      <a class="powered-by" href="https://aicstudio.tech" target="_blank" rel="noopener">
+        <span>Powered by</span>
+        <img class="powered-logo" src="assets/logos/powered-by-lisa.png" alt="LISA">
+      </a>
+    </div>
+  </div>
+</footer>
+
+<a id="waFloat" class="wa-float" href="https://wa.me/573103716688?text=%C2%A1Hola%2C%20familia%20AMA%21%20Vengo%20de%20su%20sitio%20web%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20para%20proteger%20lo%20que%20amo." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg><use href="#ico-whatsapp"/></svg>
+</a>
+
+<script>
+(function () {
+  var toggle = document.getElementById('navToggle');
+  var menu = document.getElementById('mobileMenu');
+  var icon = document.getElementById('navToggleIcon');
+  if (toggle && menu) {
+    toggle.addEventListener('click', function () {
+      var open = menu.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      icon.innerHTML = '<use href="#' + (open ? 'ico-close' : 'ico-menu') + '"/>';
+    });
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        menu.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        icon.innerHTML = '<use href="#ico-menu"/>';
+      });
+    });
+  }
+
+  var btn = document.getElementById('waFloat');
+  if (btn) {
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var delay = reduceMotion ? 300 : 1400;
+    setTimeout(function () { btn.classList.add('is-visible'); }, delay);
+  }
+})();
+</script>
+
+</body>
+</html>
