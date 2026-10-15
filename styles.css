@@ -180,7 +180,7 @@ p { margin: 0; }
 .cat--dark .wa-pill:hover { background: color-mix(in srgb, var(--white) 22%, transparent); }
 
 /* ===================================================================
-   Motivo gráfico: corazón de líneas (único elemento decorativo recurrente)
+   Motivo gráfico: corazón del isotipo (único elemento decorativo recurrente)
    =================================================================== */
 .heart-mark {
   position: absolute;
@@ -201,8 +201,8 @@ p { margin: 0; }
   top: -8%;
   right: -12%;
   width: min(62vw, 760px);
-  aspect-ratio: 1 / 0.92;
-  opacity: 0.9;
+  aspect-ratio: 898 / 844;
+  opacity: 0.22;
   color: var(--teal-300);
 }
 .hero-grid {
@@ -285,7 +285,7 @@ p { margin: 0; }
 
 @media (max-width: 760px) {
   .hero { padding: 48px 0 64px; }
-  .hero .heart-mark { top: -4%; right: -30%; width: 86vw; opacity: 0.55; }
+  .hero .heart-mark { top: -4%; right: -30%; width: 86vw; opacity: 0.16; }
 }
 
 /* ===================================================================
