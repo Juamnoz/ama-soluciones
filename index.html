@@ -686,7 +686,7 @@
       if (!a || isPhone) return;
       e.preventDefault();
       var num = decodeURIComponent(a.getAttribute('href').slice(4));
-      toast.innerHTML = 'Marca <strong>' + num + '</strong> desde tu celular<br><span>Línea gratuita desde Claro, Movistar y Tigo</span>';
+      toast.innerHTML = 'Marca <strong>' + num + '</strong> desde tu celular';
       toast.hidden = false;
       clearTimeout(timer);
       timer = setTimeout(function () { toast.hidden = true; }, 5000);
