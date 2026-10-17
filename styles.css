@@ -817,3 +817,27 @@ p { margin: 0; }
 .sound-btn[hidden] { display: none; }
 .sound-btn svg { width: 18px; height: 18px; }
 .sound-btn:hover { background: var(--teal-900); }
+
+/* Logos de aliados = botón a su línea de asistencia; teléfonos del equipo como píldora clickeable */
+.aliado {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+.aliado-line {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--teal-700);
+  font-variant-numeric: tabular-nums;
+}
+.aliado:hover .aliado-line { text-decoration: underline; }
+.team-phone {
+  padding: 4px 10px;
+  border: 1px solid color-mix(in srgb, var(--white) 45%, transparent);
+  border-radius: 999px;
+  opacity: 1;
+}
+.team-phone:hover { background: color-mix(in srgb, var(--white) 12%, transparent); text-decoration: none; }
