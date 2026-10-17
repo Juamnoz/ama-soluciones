@@ -48,6 +48,12 @@ Cada servicio lleva su propio botón de WhatsApp con mensaje específico (ver ab
 ### Sección 5 · Tu empresa y tu profesión
 - **Seguros para Empresas:** Tu negocio es tu esfuerzo; no lo dejes al azar. Te asesoramos en coberturas para que operes con solidez.
 - **Responsabilidad Civil Profesional:** Ejerce tu profesión con respaldo frente a reclamos por errores u omisiones en tu trabajo.
+- *Agregados 2026-10-17 a pedido del cliente (copy redactado por AIC Studio, pendiente de visto bueno):*
+  - **Todo Riesgo Daño Material:** Protege las instalaciones, maquinaria, equipos e inventarios de tu empresa frente a incendio, terremoto, robo y otros imprevistos.
+  - **Responsabilidad Civil Extracontractual:** Te respaldamos frente a reclamos de terceros por daños que cause tu actividad, para que un imprevisto no ponga en riesgo tu patrimonio.
+  - **Seguro de Cumplimiento:** Las pólizas que te piden para contratar con entidades públicas y privadas, gestionadas rápido y sin enredos.
+  - **Transporte de Mercancías:** Tu carga protegida en cada trayecto, desde que sale hasta que llega a su destino.
+  - **Ciberseguridad:** Respaldo frente a ataques informáticos, filtración de datos y extorsión digital, con apoyo para recuperar tu operación.
 
 **Mensaje de WhatsApp por producto** (plantilla, reemplazar "…" por el nombre del producto tal como aparece arriba): `"Hola, AMA. Vengo de su página web y quiero información sobre el seguro de…"`
 
@@ -78,7 +84,7 @@ Cada servicio lleva su propio botón de WhatsApp con mensaje específico (ver ab
 - **¿Cuánto cuesta la asesoría?** Nada. Nuestra asesoría no tiene costo; solo pagas tu póliza.
 - **¿Atienden en toda Colombia?** Sí. Te atendemos de forma virtual desde cualquier ciudad del país.
 - **¿Puedo pasar mis pólizas actuales con ustedes?** Sí. Revisamos lo que tienes hoy, te decimos si hay algo que mejorar y si decides quedarte con nosotros, hacemos el trámite.
-- **¿Qué pasa si tengo un siniestro?** Comunícate a la línea de asistencia de la aseguradora que tiene atención las 24 horas del día los 7 días de la semana o también nos puedes llamar o escribir y te acompañamos en todo el proceso de reclamación con la aseguradora.
+- **¿Qué pasa si tengo un siniestro?** *(actualizado 2026-10-17 con las líneas de cada aseguradora: Sura #888, Allianz #265, Seguros Bolívar #322, Axa Colpatria #247, SBS #360)* Comunícate a la línea de asistencia de la aseguradora que tiene atención las 24 horas del día los 7 días de la semana o también nos puedes llamar o escribir y te acompañamos en todo el proceso de reclamación con la aseguradora.
 - **¿También tienen créditos?** Sí, para vehículo nuevo o usado, sujetos a aprobación de la entidad financiera.
 
 ## 8. Asesoría personalizada (Cierre)
