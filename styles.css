@@ -841,3 +841,23 @@ p { margin: 0; }
   opacity: 1;
 }
 .team-phone:hover { background: color-mix(in srgb, var(--white) 12%, transparent); text-decoration: none; }
+
+/* Aviso al hacer clic en una línea # desde computador */
+.call-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 60;
+  max-width: calc(100% - 32px);
+  padding: 14px 20px;
+  border-radius: 14px;
+  background: var(--teal-900);
+  color: var(--white);
+  font-size: 15px;
+  text-align: center;
+  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.45);
+}
+.call-toast strong { font-size: 18px; font-variant-numeric: tabular-nums; }
+.call-toast span { font-size: 12px; opacity: 0.8; }
+.call-toast[hidden] { display: none; }

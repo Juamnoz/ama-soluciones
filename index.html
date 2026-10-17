@@ -673,5 +673,25 @@
 })();
 </script>
 
+<div class="call-toast" id="callToast" role="status" aria-live="polite" hidden></div>
+<script>
+  // Las líneas # (#888, #265…) solo se marcan desde un celular. En computador
+  // el clic no llama a nada: mostramos el número para marcarlo desde el móvil.
+  (function () {
+    var toast = document.getElementById('callToast');
+    var timer;
+    var isPhone = window.matchMedia('(pointer: coarse)').matches;
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a[href^="tel:%23"]');
+      if (!a || isPhone) return;
+      e.preventDefault();
+      var num = decodeURIComponent(a.getAttribute('href').slice(4));
+      toast.innerHTML = 'Marca <strong>' + num + '</strong> desde tu celular<br><span>Línea gratuita desde Claro, Movistar y Tigo</span>';
+      toast.hidden = false;
+      clearTimeout(timer);
+      timer = setTimeout(function () { toast.hidden = true; }, 5000);
+    });
+  })();
+</script>
 </body>
 </html>
