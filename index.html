@@ -582,38 +582,91 @@
   consent.addEventListener('click', function (e) { if (e.target === consent) closeConsent(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && consent.classList.contains('is-open')) closeConsent(); });
 
-  // Videos: se reproducen solos (sin sonido) cuando entran en pantalla y se pausan al salir.
-  // Si la persona los pausa a mano, no se vuelven a reproducir solos.
-  var videos = document.querySelectorAll('video.autoplay-video');
+  // Videos: se reproducen solos cuando entran en pantalla y se pausan al salir de ella.
+  // Los navegadores no dejan arrancar con sonido hasta que la persona toca la página
+  // (el scroll no cuenta). Por eso: mientras no haya tocado, suenan en silencio con un
+  // botón "Activar sonido"; desde el primer toque en cualquier parte, cada video suena
+  // al entrar en pantalla y se calla (pausa) al salir. Solo uno suena a la vez.
+  // Si la persona pausa un video a mano, no vuelve a arrancar solo.
+  var videos = Array.prototype.slice.call(document.querySelectorAll('video.autoplay-video'));
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var soundOn = false;
+
+  function auto(v, fn) { v.dataset.autoAction = '1'; return fn(); }
+  function syncBtn(v) {
+    if (v._soundBtn) v._soundBtn.hidden = !(v.muted && !v.paused);
+  }
+  function startVideo(v) {
+    videos.forEach(function (o) { if (o !== v && !o.paused) auto(o, function () { o.pause(); }); });
+    v.muted = !soundOn;
+    var p = auto(v, function () { return v.play(); });
+    if (p && p.catch) p.catch(function () {
+      // El navegador no dejó reproducir con sonido: se intenta en silencio.
+      v.muted = true;
+      var p2 = auto(v, function () { return v.play(); });
+      if (p2 && p2.catch) p2.catch(function () { delete v.dataset.autoAction; });
+    });
+  }
+  function enableSound() {
+    if (soundOn) return;
+    soundOn = true;
+    videos.forEach(function (v) {
+      if (!v.paused) { v.muted = false; syncBtn(v); }
+    });
+  }
+
   if ('IntersectionObserver' in window && !reduce) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         var v = entry.target;
-        if (entry.intersectionRatio >= 0.6) {
-          if (!v.dataset.userPaused && v.paused && !v.ended) {
-            v.dataset.autoAction = '1';
-            var p = v.play();
-            if (p && p.catch) p.catch(function () { delete v.dataset.autoAction; });
-          }
+        v._inView = entry.intersectionRatio >= 0.6;
+        if (v._inView) {
+          if (!v.dataset.userPaused && v.paused && !v.ended) startVideo(v);
         } else if (!v.paused) {
-          v.dataset.autoAction = '1';
-          v.pause();
+          auto(v, function () { v.pause(); });
         }
       });
     }, { threshold: [0, 0.6] });
+
     videos.forEach(function (v) {
-      v.muted = true;
       v.setAttribute('playsinline', '');
+      var card = v.closest('.video-card');
+      if (card) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'sound-btn';
+        btn.hidden = true;
+        btn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>Activar sonido';
+        btn.addEventListener('click', function () { enableSound(); v.muted = false; syncBtn(v); });
+        card.appendChild(btn);
+        v._soundBtn = btn;
+      }
       v.addEventListener('play', function () {
+        syncBtn(v);
         if (v.dataset.autoAction) { delete v.dataset.autoAction; return; }
         delete v.dataset.userPaused;
+        videos.forEach(function (o) { if (o !== v && !o.paused) auto(o, function () { o.pause(); }); });
       });
       v.addEventListener('pause', function () {
+        syncBtn(v);
         if (v.dataset.autoAction) { delete v.dataset.autoAction; return; }
         if (!v.ended) v.dataset.userPaused = '1';
       });
+      // Si la persona silencia o activa el sonido con los controles, se respeta para los siguientes.
+      v.addEventListener('volumechange', function () {
+        syncBtn(v);
+        if (!v.paused && v._userGesture) soundOn = !v.muted;
+      });
       io.observe(v);
+    });
+
+    // Primer toque/tecla en cualquier parte de la página: el sonido queda habilitado.
+    ['pointerdown', 'touchend', 'keydown'].forEach(function (evt) {
+      document.addEventListener(evt, function (e) {
+        videos.forEach(function (v) { v._userGesture = true; });
+        if (e.target.closest && e.target.closest('.sound-btn')) return;
+        enableSound();
+      }, { capture: true, passive: true });
     });
   }
 })();

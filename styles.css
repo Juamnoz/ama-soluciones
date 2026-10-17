@@ -789,3 +789,31 @@ p { margin: 0; }
 .legal-back { font-size: 14px; font-weight: 600; color: var(--teal-900); text-decoration: none; }
 .legal-back:hover { text-decoration: underline; }
 .legal-footer { padding: 28px 0; font-size: 13px; color: color-mix(in srgb, var(--white) 70%, transparent); }
+
+/* Botón "Activar sonido" sobre los videos que suenan en silencio */
+.sound-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 64px;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--teal-900) 82%, transparent);
+  color: var(--white);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 8px 20px -6px rgba(14, 34, 41, 0.5);
+}
+.sound-btn[hidden] { display: none; }
+.sound-btn svg { width: 18px; height: 18px; }
+.sound-btn:hover { background: var(--teal-900); }
