@@ -861,3 +861,19 @@ p { margin: 0; }
 .call-toast strong { font-size: 18px; font-variant-numeric: tabular-nums; }
 .call-toast span { font-size: 12px; opacity: 0.8; }
 .call-toast[hidden] { display: none; }
+
+/* Letrero debajo del video cuando el video ya trae texto arriba (testimonio de empresas) */
+.video-card-tag--below {
+  position: static;
+  display: block;
+  border-radius: 0;
+  padding: 12px 16px;
+  text-align: center;
+  background: var(--teal-900);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+/* Logo de Axa Colpatria: símbolo + nombre apilados, necesita más alto */
+.aliado-logo--stacked { height: 56px; }
+@media (min-width: 900px) { .aliado-logo--stacked { height: 64px; } }

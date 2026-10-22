@@ -274,7 +274,7 @@
             <video class="autoplay-video" controls muted preload="metadata" poster="assets/videos/testimonio-empresas.jpg" playsinline>
               <source src="assets/videos/testimonio-empresas.mp4" type="video/mp4">
             </video>
-            <span class="video-card-tag">Deja la gestión de riesgos en nuestras manos</span>
+            <span class="video-card-tag video-card-tag--below">Deja la gestión de riesgos en nuestras manos</span>
           </div>
         </div>
         <div class="cat-products">
@@ -412,7 +412,7 @@
         <a class="aliado" href="tel:%23888" aria-label="Llamar a la línea de asistencia de Sura, #888"><img class="aliado-logo" src="assets/aliados/sura.png" alt="Sura" width="449" height="160" loading="lazy"><span class="aliado-line">Asistencia #888</span></a>
         <a class="aliado" href="tel:%23265" aria-label="Llamar a la línea de asistencia de Allianz, #265"><img class="aliado-logo" src="assets/aliados/allianz.png" alt="Allianz" width="615" height="160" loading="lazy"><span class="aliado-line">Asistencia #265</span></a>
         <a class="aliado" href="tel:%23322" aria-label="Llamar a la línea de asistencia de Seguros Bolívar, #322"><img class="aliado-logo aliado-logo--square" src="assets/aliados/seguros-bolivar.png" alt="Seguros Bolívar" width="160" height="160" loading="lazy"><span class="aliado-line">Asistencia #322</span></a>
-        <a class="aliado" href="tel:%23247" aria-label="Llamar a la línea de asistencia de Axa Colpatria, #247"><span class="aliado-chip">Axa Colpatria</span><span class="aliado-line">Asistencia #247</span></a>
+        <a class="aliado" href="tel:%23247" aria-label="Llamar a la línea de asistencia de Axa Colpatria, #247"><img class="aliado-logo aliado-logo--stacked" src="assets/aliados/axa-colpatria.png" alt="Axa Colpatria" width="317" height="160" loading="lazy"><span class="aliado-line">Asistencia #247</span></a>
         <a class="aliado" href="tel:%23360" aria-label="Llamar a la línea de asistencia de SBS, #360"><img class="aliado-logo" src="assets/aliados/sbs.png" alt="SBS" width="513" height="160" loading="lazy"><span class="aliado-line">Asistencia #360</span></a>
       </div>
     </div>
@@ -488,6 +488,7 @@
           <h5>Contacto</h5>
           <a href="https://wa.me/573103716688" target="_blank" rel="noopener">WhatsApp AMA 310 371 66 88</a>
           <a href="https://wa.me/573016593565" target="_blank" rel="noopener">Diana Carolina 301 659 3565</a>
+          <a href="mailto:amasolucionesltda@asesorsura.com">amasolucionesltda@asesorsura.com</a>
           <p>Medellín, Colombia</p>
         </div>
         <div class="footer-col">
@@ -680,13 +681,20 @@
   (function () {
     var toast = document.getElementById('callToast');
     var timer;
-    var isPhone = window.matchMedia('(pointer: coarse)').matches;
+    var ua = navigator.userAgent;
+    var isIOS = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    // Android sí abre el marcador con la línea #; iPhone bloquea los enlaces tel: con # o *.
+    var canDial = window.matchMedia('(pointer: coarse)').matches && !isIOS;
     document.addEventListener('click', function (e) {
       var a = e.target.closest('a[href^="tel:%23"]');
-      if (!a || isPhone) return;
+      if (!a || canDial) return;
       e.preventDefault();
       var num = decodeURIComponent(a.getAttribute('href').slice(4));
-      toast.innerHTML = 'Marca <strong>' + num + '</strong> desde tu celular';
+      var copied = false;
+      try { navigator.clipboard.writeText(num); copied = true; } catch (err) {}
+      toast.innerHTML = isIOS
+        ? 'Abre tu teléfono y marca <strong>' + num + '</strong>' + (copied ? '<br><span>Ya lo copiamos, solo pégalo</span>' : '')
+        : 'Marca <strong>' + num + '</strong> desde tu celular';
       toast.hidden = false;
       clearTimeout(timer);
       timer = setTimeout(function () { toast.hidden = true; }, 5000);
