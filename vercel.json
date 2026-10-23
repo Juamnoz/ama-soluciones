@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/:path*", "destination": "https://amasolucionesltda.com/:path*", "permanent": true }
+  ]
+}
